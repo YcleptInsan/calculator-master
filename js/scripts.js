@@ -1,32 +1,32 @@
-// var add = function(number1, number2){
-// 	return number1 + number2;
-// };
-//
-//
-//
-// var subtract = function(number1, number2){
-// 	return number1 - number2;
-// };
-//
-//
-// var multiply = function(number1, number2){
-// 	return number1 * number2;
-// };
-//
-//
-//
-// var divide = function(number1, number2){
-// 	return number1 / number2;
-// };
-//
-//
-// var number1 = parseInt(prompt("Enter a number:"));
-// var number2 = parseInt(prompt("Enter another number:"));
-// var result = multiply(number1, number2);
-// alert(result);
-//
-// alert()
+
+//defining variables to preform math
+ var add = function(number1, number2){
+ 	return number1 + number2;
+ };
+
+
+
+ var subtract = function(number1, number2){
+ 	return number1 - number2;
+ };
+
+
+var multiply = function(number1, number2){
+	return number1 * number2;
+};
+
+
+
+var divide = function(number1, number2){
+	return number1 / number2;
+};
+
+
+
+// starting UI Logic here
 var numEnter = "";
+var setNum = 0;
+var operator = "";
 
 $(document).ready(function() {
 	$("#button-seven").click(function (){
@@ -118,12 +118,26 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$("#button-decimal").click(function (){
 		numEnter = numEnter + ".";
-		$("#display").text(numEnter);
+	 	$("#display").text(numEnter);
 	});
 });
 $(document).ready(function() {
 	$("#button-add").click(function (){
-		numEnter = numEnter + "+";
-		$("#display").text(numEnter);
+		setNum = parseInt(numEnter);
+		$("#display").text("");
+		operator = "add";
+		numEnter = "";
 	});
 });
+
+$(document).ready(function() {
+	$("#button-equals").click(function (){
+		if (operator === "add") {
+			numEnter = add(setNum, parseInt(numEnter) );
+			$("#display").text(numEnter);
+		};
+	});
+});
+
+
+//back end
