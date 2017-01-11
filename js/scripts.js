@@ -50,8 +50,10 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
 	$("#button-divide").click(function (){
-		numEnter = numEnter + "/";
-		$("#display").text(numEnter);
+		setNum = parseInt(numEnter);
+		$("#display").text("");
+		operator = "divide";
+		numEnter = "";
 	});
 });
 $(document).ready(function() {
@@ -74,8 +76,10 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
 	$("#button-multiply").click(function (){
-		numEnter = numEnter + "*";
-		$("#display").text(numEnter);
+		setNum = parseInt(numEnter);
+		$("#display").text("");
+		operator = "multiply";
+		numEnter = "";
 	});
 });
 $(document).ready(function() {
@@ -97,9 +101,11 @@ $(document).ready(function() {
 	});
 });
 $(document).ready(function() {
-	$("#button-minus").click(function (){
-		numEnter = numEnter + "-";
-		$("#display").text(numEnter);
+	$("#button-subtract").click(function (){
+		setNum = parseInt(numEnter);
+		$("#display").text("");
+		operator = "subtract"
+		numEnter = "";
 	});
 });
 
@@ -134,6 +140,18 @@ $(document).ready(function() {
 	$("#button-equals").click(function (){
 		if (operator === "add") {
 			numEnter = add(setNum, parseInt(numEnter) );
+			$("#display").text(numEnter);
+		};
+		if (operator === "subtract") {
+			numEnter = subtract(setNum, parseInt(numEnter) );
+			$("#display").text(numEnter);
+		};
+		if (operator === "multiply") {
+			numEnter = multiply(setNum, parseInt(numEnter) );
+			$("#display").text(numEnter);
+		};
+		if (operator === "divide") {
+			numEnter = divide(setNum, parseInt(numEnter) );
 			$("#display").text(numEnter);
 		};
 	});
