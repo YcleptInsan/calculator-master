@@ -1,0 +1,21 @@
+
+ button {
+	width:100%;
+	margin: 10px;
+	height: 100%;
+	font-family: sans-serif;
+	border: 2px solid black;
+
+}
+
+.btn {
+	font-size: 100px;
+}
+
+
+.container-fluid {
+	margin: 100px;
+	padding: 50px;
+ text-align: center;
+
+}
